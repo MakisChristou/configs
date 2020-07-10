@@ -186,10 +186,18 @@ exec compton
 exec_always feh --bg-scale ~/Repositories/dots/Wallpaper/bg29.jpg
 exec ~/.nextcloud/Nextcloud.AppImage
 
+# Remote SSH
 bindsym $mod + Shift + m exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@makischristou.xyz -p 420"
 bindsym $mod + Shift + n exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@makischristou.xyz -p 69"
 bindsym $mod + Shift + p exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti pi@91.184.212.139 -p 314"
 bindsym $mod + Shift + o exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@makischristou.xyz -p 22"
+
+# Local SSH
+bindsym $mod + n exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.168.10.28 -p 69"
+bindsym $mod + m exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.168.10.38 -p 420"
+bindsym $mod + o exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.168.10.19 -p 22"
+
+# Custom bindings
 bindsym $mod + Shift + x exec i3lock
 
 
