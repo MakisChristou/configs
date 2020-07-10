@@ -1,0 +1,90 @@
+let mapleader = " "
+
+
+" Some Basics
+:set relativenumber
+:set rnu
+:set number
+:set nu
+:set tabstop=2
+:syntax on
+:set wildmode=longest,list,full 
+:set nocompatible
+
+" Toggle Nerd Tree Plugin
+map <C-o> :NERDTreeToggle<CR>
+
+" Fold {
+map <C-f> <Esc>$zfa{ 
+
+" Word count for latex :WC
+function! WC()
+    let filename = expand("%")
+    let cmd = "detex " . filename . " | wc -w | tr -d [:space:]"
+    let result = system(cmd)
+    echo result . " words"
+endfunction
+
+command WC call WC()
+
+
+" Toggle Spell checker
+map <leader>o :set spell!<CR>
+
+" Jump to spot
+map <leader><leader> /<++><Enter>4xi
+
+" From Luke Smith
+map <leader>s <C-w>v
+map <leader>ss <C-w>s
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+
+" Copy/Paste from/to System Clipboard
+"map <C-c> "y
+"map <C-c> "*yy
+
+
+
+" Latex Shortcuts
+map ,go <Esc>i\documentclass{article}<Enter>\author{Michalis Christou}<Enter>\title{}<Enter>\begin{document}<Enter>\maketitle<Enter>\end{document}<Esc>/title{}<Enter>f}i
+autocmd Filetype tex map ,use <Esc>i\usepackage{}<Space><Esc>T{i
+autocmd Filetype tex map ,marg <Esc>i\usepackage[left=2cm,right=2cm,top=1cm,bottom=2cm]{geometry}<Esc>
+autocmd Filetype tex map ,bf <Esc>i\textbf{}<Space><Esc>T{i
+autocmd Filetype tex map ,ud <Esc>i\underline{}<Space><Esc>T{i
+autocmd Filetype tex map ,it <Esc>i\textit{}<Space><Esc>T{i
+autocmd Filetype tex map ,tt <Esc>i\texttt{}<Space><Esc>T{i
+autocmd Filetype tex map ,obj <Esc>i\item{}<Space><Esc>T{i
+autocmd Filetype tex map ,lit <Esc>i\begin{itemize}<Enter><Enter>\end{itemize}<Esc>ki\item{}<Esc>T{i
+autocmd Filetype tex map ,lin <Esc>i\begin{enumerate}<Enter><Enter>\end{enumerate}<Esc>ki\item{}<Esc>T{i
+autocmd Filetype tex map ,ch <Esc>i\chapter{}<Space><Esc>T{i
+autocmd Filetype tex map ,sec <Esc>i\section{}<Space><Esc>T{i
+autocmd Filetype tex map ,ssec <Esc>i\subsection{}<Space><Esc>T{i
+autocmd Filetype tex map ,sssec <Esc>i\subsubsection{}<Space><Esc>T{i
+autocmd Filetype tex map ,tab <Esc>i\begin{center}<Enter>\begin{tabular}{  c  c  c  }<Enter><Enter>1 & 2 & 3\\<Enter><Enter>4 & 5 & 6\\<Enter><Enter>7 & 8 & 9<Enter><Enter>\end{tabular}<Enter>\end{center}<Esc> 
+autocmd Filetype tex map ,mat <Esc>i$$<Enter>\begin{matrix}<Enter>1 & 2 & 3\\<Enter>a & b & c<Enter>\end{matrix}<Enter>$$<Esc>
+autocmd Filetype tex map ,pmat <Esc>i$$<Enter>\begin{pmatrix}<Enter>1 & 2 & 3\\<Enter>a & b & c<Enter>\end{pmatrix}<Enter>$$<Esc>
+autocmd Filetype tex map ,bmat <Esc>i$$<Enter>\begin{bmatrix}<Enter>1 & 2 & 3\\<Enter>a & b & c<Enter>\end{bmatrix}<Enter>$$<Esc>
+autocmd Filetype tex map ,Bmat <Esc>i$$<Enter>\begin{Bmatrix}<Enter>1 & 2 & 3\\<Enter>a & b & c<Enter>\end{Bmatrix}<Enter>$$<Esc>
+autocmd Filetype tex map ,vmat <Esc>i$$<Enter>\begin{vmatrix}<Enter>1 & 2 & 3\\<Enter>a & b & c<Enter>\end{vmatrix}<Enter>$$<Esc>
+autocmd Filetype tex map ,Vmat <Esc>i$$<Enter>\begin{Vmatrix}<Enter>1 & 2 & 3\\<Enter>a & b & c<Enter>\end{Vmatrix}<Enter>$$<Esc>
+autocmd Filetype tex map ,fig <Esc>i\begin{figure}[h]<Enter>\begin{center}<Enter>\includegraphics[scale=1]{image.png}<Enter>\caption{Enter description}<Enter>\label{fig:1}<Enter>\end{center}<Enter>\end{figure}<Esc>
+autocmd Filetype tex map ,alg <Esc>i\begin{algorithm}<Enter>\caption{Algorithm Name}\label{algo_name}<Enter>\begin{algorithmic}[1]<Enter>\If {$((p \neq Out) or (\mid S \mid \leq \theta))$}<Enter>\For{\texttt{each i in parallel}}<Enter>\If {$(Out == True)$}<Enter>\State $C(i)++$<Enter>\Else <Enter>\State $C(i)--$<Enter>\EndIf<Enter>\EndFor<Enter>\EndIf<Enter>\end{algorithmic}<Enter>\end{algorithm}
+autocmd Filetype tex map <leader>c <Esc>0i%<Esc>
+autocmd Filetype tex map <leader>u <Esc>01x<Esc>
+
+" C++ Shortcuts
+autocmd Filetype cpp map ,in <Esc>i#include
+autocmd Filetype cpp map ,if <Esc>iif(<++>)<Enter>{<Enter><++><Enter>}<Esc>
+autocmd Filetype cpp map ,hw <Esc>i#include<Space><iostream><Enter>int main(int argc, char *argv[]){<Enter>std::cout<<"Hello World"<<std::endl;<Enter>}<Esc>
+autocmd Filetype cpp map <leader>c <Esc>0i//<Esc>
+autocmd Filetype cpp map <leader>u <Esc>02x<Esc>
+autocmd Filetype cpp map ,for <Esc>ifor(int<Space>i<Space>=<Space>0;<Space>i<Space><<Space><++>;<Space>i++)<Enter>{<Enter><++><Enter>}<Esc>
+
+" VHDL Shortcuts
+autocmd Filetype vhdl map <leader>c <Esc>0i--<Esc>
+autocmd Filetype vhdl map <leader>u <Esc>02x<Esc>
+
