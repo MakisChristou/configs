@@ -180,10 +180,15 @@ bar {
         status_command i3status -c ~/.config/i3/i3status.conf
 }
 
-#Added
+# High DPI
 exec_always xrandr --dpi 192
+#exec_always XDG_CURRENT_DESKTOP=ubuntu:GNOME
+#exec_always GDMSESSION=gnome-shell
+#exec_always gsettings set org.gnome.desktop.interface text-scaling-factor 2
+
+
 exec compton
-exec_always feh --bg-scale ~/Repositories/dots/Wallpaper/bg29.jpg
+exec_always feh --bg-scale ~/Repositories/Config-Files/Wallpapers/bg29.jpg
 exec ~/.nextcloud/Nextcloud.AppImage
 exec ~/.joplin/Joplin.AppImage
 
@@ -201,7 +206,11 @@ bindsym $mod + o exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.16
 # Custom bindings
 bindsym $mod + Shift + x exec i3lock -c 000000
 bindsym $mod + c exec i3-sensible-terminal -e "vim ~/.config/i3/config"
-bindsym $mod + g exec i3-sensible-terminal -e "gotop"
-bindsym $mod + t exec i3-sensible-terminal -e "htop"
+bindsym $mod + Shift + g exec i3-sensible-terminal -e "gotop"
+bindsym $mod + Shift + t exec i3-sensible-terminal -e "htop"
+bindsym $mod + Shift + f exec i3-sensible-terminal -e "ranger"
 
- 
+# Set Gaps
+gaps inner 20
+gaps outer 10
+
