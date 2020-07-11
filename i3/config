@@ -181,10 +181,11 @@ bar {
 }
 
 #Added
-exec_always xrandr --dpi 220
+exec_always xrandr --dpi 192
 exec compton
 exec_always feh --bg-scale ~/Repositories/dots/Wallpaper/bg29.jpg
 exec ~/.nextcloud/Nextcloud.AppImage
+exec ~/.joplin/Joplin.AppImage
 
 # Remote SSH
 bindsym $mod + Shift + m exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@makischristou.xyz -p 420"
@@ -198,7 +199,9 @@ bindsym $mod + m exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.16
 bindsym $mod + o exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.168.10.19 -p 22"
 
 # Custom bindings
-bindsym $mod + Shift + x exec i3lock
+bindsym $mod + Shift + x exec i3lock -c 000000
+bindsym $mod + c exec i3-sensible-terminal -e "vim ~/.config/i3/config"
+bindsym $mod + g exec i3-sensible-terminal -e "gotop"
+bindsym $mod + t exec i3-sensible-terminal -e "htop"
 
-
-
+ 
