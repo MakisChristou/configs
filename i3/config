@@ -181,7 +181,7 @@ bar {
 }
 
 # High DPI
-exec_always xrandr --dpi 192
+exec_always xrandr --dpi 220
 #exec_always XDG_CURRENT_DESKTOP=ubuntu:GNOME
 #exec_always GDMSESSION=gnome-shell
 #exec_always gsettings set org.gnome.desktop.interface text-scaling-factor 2
@@ -191,6 +191,7 @@ exec compton
 exec_always feh --bg-scale ~/Repositories/Config-Files/Wallpapers/bg29.jpg
 exec ~/.nextcloud/Nextcloud.AppImage
 exec ~/.joplin/Joplin.AppImage
+exec xfce4-power-manager
 
 # Remote SSH
 bindsym $mod + Shift + m exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@makischristou.xyz -p 420"
@@ -209,8 +210,16 @@ bindsym $mod + c exec i3-sensible-terminal -e "vim ~/.config/i3/config"
 bindsym $mod + Shift + g exec i3-sensible-terminal -e "gotop"
 bindsym $mod + Shift + t exec i3-sensible-terminal -e "htop"
 bindsym $mod + Shift + f exec i3-sensible-terminal -e "ranger"
+bindsym $mod + p exec keepassxc
+bindsym $mod + Shift + b exec signal-desktop
+bindsym $mod + Shift + s exec scrot
+bindsym $mod + Shift + d exec xrandr --dpi 220 --output eDP-1 --mode 3840x2160 --output DP-1  --scale 2x2 --pos 3840x0 
 
-# Set Gaps
-gaps inner 20
-gaps outer 10
+# Set Gaps XPS13
+#gaps inner 20
+#gaps outer 10
+
+# Set Gaps Thinkvision
+#gaps inner 15
+#gaps outer 5
 
