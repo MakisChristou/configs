@@ -211,9 +211,11 @@ bindsym $mod + Shift + g exec i3-sensible-terminal -e "gotop"
 bindsym $mod + Shift + t exec i3-sensible-terminal -e "htop"
 bindsym $mod + Shift + f exec i3-sensible-terminal -e "ranger"
 bindsym $mod + p exec keepassxc
-bindsym $mod + Shift + b exec signal-desktop
+bindsym $mod + Shift + w exec signal-desktop
 bindsym $mod + Shift + s exec scrot
 bindsym $mod + Shift + d exec xrandr --dpi 220 --output eDP-1 --mode 3840x2160 --output DP-1  --scale 2x2 --pos 3840x0 
+bindsym $mod + Shift + a exec arandr
+bindsym $mod + Shift + b exec brave-browser
 
 # Set Gaps XPS13
 #gaps inner 20
