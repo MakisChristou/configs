@@ -193,6 +193,9 @@ exec ~/.nextcloud/Nextcloud.AppImage
 exec ~/.joplin/Joplin.AppImage
 exec xfce4-power-manager
 
+# For keyboard layout
+exec_always "setxkbmap -model pc104 -layout us,gr -variant ,, -option grp:alt_shift_toggle"
+
 # Remote SSH
 bindsym $mod + Shift + m exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@makischristou.xyz -p 420"
 bindsym $mod + Shift + n exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@makischristou.xyz -p 69"
@@ -216,6 +219,10 @@ bindsym $mod + Shift + s exec scrot
 bindsym $mod + Shift + d exec xrandr --dpi 220 --output eDP-1 --mode 3840x2160 --output DP-1  --scale 2x2 --pos 3840x0 
 bindsym $mod + Shift + a exec arandr
 bindsym $mod + Shift + b exec brave-browser
+
+# Set Gaps Parashesimo
+#gaps inner 5
+#gaps outer 2
 
 # Set Gaps XPS13
 #gaps inner 20
