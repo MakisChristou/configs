@@ -193,7 +193,7 @@ exec ~/.nextcloud/Nextcloud.AppImage
 exec ~/.joplin/Joplin.AppImage
 exec xfce4-power-manager
 
-# For keyboard layout
+# Change Keyboard Layout
 exec_always "setxkbmap -model pc104 -layout us,gr -variant ,, -option grp:alt_shift_toggle"
 
 # Remote SSH
@@ -203,13 +203,17 @@ bindsym $mod + Shift + p exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti $PI_
 bindsym $mod + Shift + o exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti $HOME_SSH -p 22"
 
 # Local SSH
-bindsym $mod + n exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.168.10.28 -p 69"
-bindsym $mod + m exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.168.10.38 -p 420"
-bindsym $mod + o exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.168.10.19 -p 22"
+#bindsym $mod + n exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.168.10.28 -p 69"
+#bindsym $mod + m exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.168.10.38 -p 420"
+#bindsym $mod + o exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.168.10.19 -p 22"
 
 # Custom bindings
 bindsym $mod + Shift + x exec i3lock -c 000000
 bindsym $mod + c exec i3-sensible-terminal -e "vim ~/.config/i3/config"
+bindsym $mod + x exec i3-sensible-terminal -e "vim .vimrc"
+bindsym $mod + b exec i3-sensible-terminal -e "vim .profile"
+bindsym $mod + n exec i3-sensible-terminal -e "vim .bashrc"
+bindsym $mod + o exec i3-sensible-terminal -e "vim ~/.config/ranger/rc.conf"
 bindsym $mod + Shift + g exec i3-sensible-terminal -e "gotop"
 bindsym $mod + Shift + t exec i3-sensible-terminal -e "htop"
 bindsym $mod + Shift + f exec i3-sensible-terminal -e "ranger"
@@ -219,10 +223,9 @@ bindsym $mod + Shift + s exec scrot
 bindsym $mod + Shift + d exec xrandr --dpi 220 --output eDP-1 --mode 3840x2160 --output DP-1  --scale 2x2 --pos 3840x0 
 bindsym $mod + Shift + a exec arandr
 bindsym $mod + Shift + b exec brave-browser
-
-# Set Gaps Parashesimo
-#gaps inner 5
-#gaps outer 2
+bindsym $mod + Shift + y exec ~/.joplin/Joplin.AppImage
+bindsym $mod + m exec i3-sensible-terminal -e "sudo ~/Repositories/Config-Files/Scripts/Dmenu_Mount.sh"
+bindsym $mod + u exec i3-sensible-terminal -e "sudo ~/Repositories/Config-Files/Scripts/Dmenu_Unmount.sh"
 
 # Set Gaps XPS13
 #gaps inner 20
