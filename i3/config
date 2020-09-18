@@ -197,27 +197,23 @@ exec xfce4-power-manager
 exec_always "setxkbmap -model pc104 -layout us,gr -variant ,, -option grp:alt_shift_toggle"
 
 # Remote SSH
-bindsym $mod + Shift + m exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti $HOME_SSH -p 420"
+bindsym $mod + Shift + i exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti $HOME_SSH -p 420"
 bindsym $mod + Shift + n exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti $HOME_SSH -p 69"
-bindsym $mod + Shift + p exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti $PI_SSH -p 314"
 bindsym $mod + Shift + o exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti $HOME_SSH -p 22"
 
 # Local SSH
-#bindsym $mod + n exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.168.10.28 -p 69"
-#bindsym $mod + m exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.168.10.38 -p 420"
-#bindsym $mod + o exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.168.10.19 -p 22"
+bindsym $mod + n exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.168.10.28 -p 69"
+bindsym $mod + i exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.168.10.38 -p 420"
+bindsym $mod + o exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.168.10.19 -p 22"
+bindsym $mod + p exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti pi@192.168.10.120 -p 314"
 
 # Custom bindings
 bindsym $mod + Shift + x exec i3lock -c 000000
 bindsym $mod + c exec i3-sensible-terminal -e "vim ~/.config/i3/config"
-#bindsym $mod + x exec i3-sensible-terminal -e "vim .vimrc"
-#bindsym $mod + b exec i3-sensible-terminal -e "vim .profile"
-#bindsym $mod + n exec i3-sensible-terminal -e "vim .bashrc"
-#bindsym $mod + o exec i3-sensible-terminal -e "vim ~/.config/ranger/rc.conf"
 bindsym $mod + Shift + g exec i3-sensible-terminal -e "gotop"
 bindsym $mod + Shift + t exec i3-sensible-terminal -e "htop"
 bindsym $mod + Shift + f exec i3-sensible-terminal -e "ranger"
-bindsym $mod + p exec keepassxc
+bindsym $mod + Shift + p exec keepassxc
 bindsym $mod + Shift + w exec signal-desktop
 bindsym $mod + Shift + s exec scrot
 bindsym $mod + Shift + d exec xrandr --dpi 220 --output eDP-1 --mode 3840x2160 --output DP-1  --scale 2x2 --pos 3840x0 
@@ -228,10 +224,6 @@ bindsym $mod + m exec i3-sensible-terminal -e "sudo ~/Repositories/Config-Files/
 bindsym $mod + u exec i3-sensible-terminal -e "sudo ~/Repositories/Config-Files/Scripts/Dmenu_Unmount.sh"
 
 # Set Gaps XPS13
-#gaps inner 20
-#gaps outer 10
-
-# Set Gaps Thinkvision
-#gaps inner 15
-#gaps outer 5
+# gaps inner 20
+# gaps outer 10
 
