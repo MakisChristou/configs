@@ -181,7 +181,7 @@ bar {
 }
 
 # High DPI
-exec_always xrandr --dpi 220
+exec_always xrandr --dpi 150
 #exec_always XDG_CURRENT_DESKTOP=ubuntu:GNOME
 #exec_always GDMSESSION=gnome-shell
 #exec_always gsettings set org.gnome.desktop.interface text-scaling-factor 2
@@ -201,17 +201,19 @@ bindsym $mod + Shift + n exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti m
 bindsym $mod + Shift + i exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@$HOME_IP -p 420"
 bindsym $mod + Shift + o exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@$HOME_IP -p 666"
 bindsym $mod + Shift + p exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti pi@$HOME_IP -p 314"
+bindsym $mod + Shift + g exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti pi@$GRANDMA_IP"
 
 # Local SSH
 bindsym $mod + n exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.168.10.28 -p 69"
 bindsym $mod + i exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.168.10.38 -p 420"
 bindsym $mod + o exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti makis@192.168.10.19 -p 666"
 bindsym $mod + p exec i3-sensible-terminal -e "ssh -i ~/.ssh/1080ti pi@192.168.10.120 -p 314"
+bindsym $mod + g exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti pi@192.168.0.69"
 
 # Custom bindings
 bindsym $mod + Shift + x exec i3lock -c 000000
 bindsym $mod + c exec i3-sensible-terminal -e "vim ~/.config/i3/config"
-bindsym $mod + Shift + g exec i3-sensible-terminal -e "gotop"
+#bindsym $mod + Shift + g exec i3-sensible-terminal -e "gotop"
 bindsym $mod + Shift + t exec i3-sensible-terminal -e "htop"
 bindsym $mod + Shift + f exec i3-sensible-terminal -e "ranger"
 # bindsym $mod + Shift + p exec keepassxc
