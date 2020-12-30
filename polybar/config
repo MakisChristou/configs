@@ -265,7 +265,7 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = " %A %d,%Y"
+date = " %B %d %Y"
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
