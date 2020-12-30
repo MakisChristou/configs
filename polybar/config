@@ -339,7 +339,7 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #21599C
+format-charging-underline = #ffffff
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -378,6 +378,7 @@ animation-discharging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon5
 thermal-zone = 0
 warn-temperature = 60
 
@@ -440,7 +441,8 @@ interval = 600
 
 format-prefix = "BTC: "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f2a900
+format-underline = #D94E91
+
 
 
 [global/wm]
