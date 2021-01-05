@@ -60,7 +60,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3
 modules-center = #mpd
-modules-right = filesystem backlight-acpi pulseaudio xkeyboard memory cpu wlan ticker-crypto eth battery temperature date
+modules-right = filesystem backlight-acpi pulseaudio xkeyboard memory cpu wlan ticker-btc ticker-xmr eth battery temperature date
 
 tray-position = right
 tray-padding = 2
@@ -434,16 +434,24 @@ screenchange-reload = true
 ;pseudo-transparency = false
 
 
-[module/ticker-crypto]
+[module/ticker-btc]
 type = custom/script
-exec = ~/ticker-crypto.sh
-interval = 600
+exec = ~/Repositories/Config-Files/polybar/scripts/ticker-bitcoin.sh
+interval = 60
 
 format-prefix = "BTC: "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #D94E91
+format-underline = #f89e30
 
 
+[module/ticker-xmr]
+type = custom/script
+exec = ~/Repositories/Config-Files/polybar/scripts/ticker-monero.sh
+interval = 60
+
+format-prefix = "XMR: "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #ff6600
 
 [global/wm]
 margin-top = 5
