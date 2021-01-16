@@ -453,6 +453,17 @@ format-prefix = "XMR: "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #ff6600
 
+
+[module/ticker-xmrbtc]
+type = custom/script
+exec = ~/Repositories/Config-Files/polybar/scripts/ticker-xmrbtc.sh
+interval = 60
+
+format-prefix = "XMR: "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #ff6600
+
+
 [global/wm]
 margin-top = 5
 margin-bottom = 5
