@@ -54,10 +54,10 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+#bindsym $mod+h focus left
+#bindsym $mod+j focus down
+#bindsym $mod+k focus up
+#bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -66,10 +66,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+#bindsym $mod+Shift+h move left
+#bindsym $mod+Shift+j move down
+#bindsym $mod+Shift+k move up
+#bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -182,7 +182,7 @@ bar {
 
 
 # High DPI
-exec_always xrandr --dpi 150
+exec_always xrandr --dpi 100
 #exec_always XDG_CURRENT_DESKTOP=ubuntu:GNOME
 #exec_always GDMSESSION=gnome-shell
 #exec_always gsettings set org.gnome.desktop.interface text-scaling-factor 2
@@ -198,35 +198,42 @@ exec xfce4-power-manager
 exec_always "setxkbmap -model pc104 -layout us,gr -variant ,, -option grp:alt_shift_toggle"
 
 # Remote SSH
-bindsym $mod + Shift + n exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@$HOME_IP -p 69"
-bindsym $mod + Shift + i exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@$HOME_IP -p 420"
-bindsym $mod + Shift + o exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@$HOME_IP -p 666"
-bindsym $mod + Shift + p exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti pi@$HOME_IP -p 314"
-bindsym $mod + Shift + g exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti ubuntu@$GRANDMA_IP"
+#bindsym $mod + Shift + n exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@$HOME_IP -p 69"
+#bindsym $mod + Shift + m exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@$HOME_IP -p 420"
+#bindsym $mod + Shift + b exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@$HOME_IP -p 666"
+#bindsym $mod + Shift + v exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@$HOME_IP -p 314"
+bindsym $mod + Shift + p exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti pi@$GRANDMA_IP"
+bindsym $mod + Shift + o exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti pi@$NICOSIA_IP"
 
 # Local SSH
 bindsym $mod + n exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@192.168.10.28 -p 69"
-bindsym $mod + i exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@192.168.10.38 -p 420"
-bindsym $mod + o exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@192.168.10.19 -p 666"
-bindsym $mod + p exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti pi@192.168.10.120 -p 314"
-bindsym $mod + g exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti ubuntu@192.168.0.69"
+bindsym $mod + m exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@192.168.10.38 -p 420"
+bindsym $mod + b exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@192.168.10.19 -p 666"
+bindsym $mod + t exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@192.168.10.31 -p 314"
 
 # Custom bindings
-bindsym $mod + Shift + m exec ~/.bitmonero/monero/monero-wallet-gui
+bindsym $mod + x exec i3-sesnsible-terminal -e "ffplay rtsp://admin:$IP_CAM_PASS@192.168.10.54:554//h264Preview_01_main"
+bindsym $mod + Shift + m exec ~/.bitmonero/monero-wallet-gui
 bindsym $mod + Shift + x exec i3lock -c 000000
 bindsym $mod + c exec i3-sensible-terminal -e "vim ~/.config/i3/config"
 #bindsym $mod + Shift + g exec i3-sensible-terminal -e "gotop"
-bindsym $mod + Shift + t exec i3-sensible-terminal -e "htop"
+#bindsym $mod + Shift + t exec i3-sensible-terminal -e "htop"
 bindsym $mod + Shift + f exec i3-sensible-terminal -e "ranger"
 # bindsym $mod + Shift + p exec keepassxc
 bindsym $mod + Shift + w exec signal-desktop
 bindsym $mod + Shift + s exec scrot
 bindsym $mod + Shift + d exec xrandr --dpi 220 --output eDP-1 --mode 3840x2160 --output DP-1  --scale 2x2 --pos 3840x0 
 bindsym $mod + Shift + a exec arandr
-bindsym $mod + Shift + b exec brave-browser
+bindsym $mod + Shift + b exec firefox
 bindsym $mod + Shift + y exec ~/.joplin/Joplin.AppImage
-bindsym $mod + m exec i3-sensible-terminal -e "sudo ~/Repositories/Config-Files/Scripts/Dmenu_Mount.sh"
-bindsym $mod + u exec i3-sensible-terminal -e "sudo ~/Repositories/Config-Files/Scripts/Dmenu_Unmount.sh"
+#bindsym $mod + m exec i3-sensible-terminal -e "sudo ~/Repositories/Config-Files/Scripts/Dmenu_Mount.sh"
+#bindsym $mod + u exec i3-sensible-terminal -e "sudo ~/Repositories/Config-Files/Scripts/Dmenu_Unmount.sh"
+
+# Personal VPNs
+bindsym $mod + Shift + h exec i3-sensible-terminal -e "sudo openvpn --config ~/.vpns/Makis-Home.ovpn" # Home
+bindsym $mod + Shift + g exec i3-sensible-terminal -e "sudo openvpn --config ~/.vpns/Makis-Grandma.ovpn" # Grandma
+bindsym $mod + Shift + j  exec i3-sensible-terminal -e "sudo openvpn --config ~/.vpns/Makis-Nicosia.ovpn" # Nicosia
+
 
 # Set Gaps XPS13
 # gaps inner 20
