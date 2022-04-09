@@ -33,7 +33,4 @@ export GDK_DPI_SCALE=1
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 
-export NICOSIA_IP=
 export GRANDMA_IP=
-export HOME_IP=
-export IP_CAM_PASS=

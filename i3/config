@@ -182,7 +182,7 @@ bar {
 
 
 # High DPI
-exec_always xrandr --dpi 150
+exec_always xrandr --dpi 100
 #exec_always XDG_CURRENT_DESKTOP=ubuntu:GNOME
 #exec_always GDMSESSION=gnome-shell
 #exec_always gsettings set org.gnome.desktop.interface text-scaling-factor 2
@@ -198,19 +198,17 @@ exec xfce4-power-manager
 exec_always "setxkbmap -model pc104 -layout us,gr -variant ,, -option grp:alt_shift_toggle"
 
 # SSH
-bindsym $mod + m exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@$HOME_IP -p 420"
-bindsym $mod + n exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@$HOME_IP -p 69"
-bindsym $mod + b exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@$HOME_IP -p 666"
-bindsym $mod + t exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@$HOME_IP -p 314"
+bindsym $mod + m exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@192.168.1.200 -p 420"
+bindsym $mod + b exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@192.168.1.201 -p 666"
+bindsym $mod + t exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti makis@192.168.1.203 -p 22"
 bindsym $mod + Shift + p exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti pi@$GRANDMA_IP"
-bindsym $mod + Shift + o exec i3-sensible-terminal -e "ssh -X -i ~/.ssh/1080ti pi@$NICOSIA_IP"
 
 # Custom bindings
-bindsym $mod + x exec i3-sesnsible-terminal -e "ffplay rtsp://admin:$IP_CAM_PASS@192.168.10.54:554//h264Preview_01_main"
+bindsym $mod + x exec i3-sesnsible-terminal -e "ffplay rtsp://admin:$IP_CAM_PASS@192.168.1.250:554//h264Preview_01_main"
 bindsym $mod + Shift + m exec ~/.bitmonero/monero-wallet-gui
 bindsym $mod + Shift + x exec i3lock -c 000000
 bindsym $mod + c exec i3-sensible-terminal -e "vim ~/.config/i3/config"
-bindsym $mod + Shift + f exec nautilus
+bindsym $mod + Shift + f exec i3-sensible-terminal -e "ranger"
 bindsym $mod + Shift + d exec keepassxc
 bindsym $mod + Shift + w exec signal-desktop
 bindsym $mod + Shift + s exec scrot
@@ -226,10 +224,9 @@ bindsym $mod + Shift + t exec i3-sensible-terminal -e "~/Repositories/Config-Fil
 # Personal VPNs
 bindsym $mod + Shift + h exec i3-sensible-terminal -e "sudo openvpn --config ~/.vpns/Makis-Home.ovpn" # Home
 bindsym $mod + Shift + g exec i3-sensible-terminal -e "sudo openvpn --config ~/.vpns/Makis-Grandma.ovpn" # Grandma
-bindsym $mod + Shift + j  exec i3-sensible-terminal -e "sudo openvpn --config ~/.vpns/Makis-Nicosia.ovpn" # Nicosia
 
 
 # Set Gaps XPS13
-#gaps inner 20
-#gaps outer 10
+gaps inner 15
+gaps outer 5
 
