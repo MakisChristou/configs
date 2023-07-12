@@ -1,0 +1,7 @@
+ssh-add ~/.ssh/1080ti
+export PATH=$PATH:/Users/makischristou/go/bin
+alias code="open -a 'Visual Studio Code'"
+alias shallot="ssh makis@192.168.1.210"
+alias radish="ssh makis@192.168.1.200"
+alias onion="ssh makis@192.168.1.201 -p 666"
+alias electi="ssh makis@192.168.1.177"
