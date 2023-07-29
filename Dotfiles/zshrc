@@ -5,3 +5,10 @@ alias shallot="ssh makis@192.168.1.210"
 alias radish="ssh makis@192.168.1.200"
 alias onion="ssh makis@192.168.1.201 -p 666"
 alias electi="ssh makis@192.168.1.177"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+export GPG_TTY=$(tty)
